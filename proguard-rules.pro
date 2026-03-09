@@ -1,0 +1,2 @@
+-keep class com.spectra.player.** { *; }
+-keep class androidx.media3.** { *; }

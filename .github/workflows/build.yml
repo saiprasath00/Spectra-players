@@ -18,16 +18,18 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '7.4.2'
+      - name: Install Gradle 7.4.2
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+          unzip -q gradle-7.4.2-bin.zip
+          echo "$PWD/gradle-7.4.2/bin" >> $GITHUB_PATH
 
       - name: Generate all project files
         run: python3 create_files.py
 
       - name: Build APK
         run: gradle assembleDebug --no-daemon
+        working-directory: ${{ github.workspace }}
 
       - name: Upload APK
         uses: actions/upload-artifact@v4

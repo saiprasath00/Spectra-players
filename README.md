@@ -1,6 +1,6 @@
 # SPECTRA — Hi-Res Audio Laboratory
 
-A high-resolution audio player for Android built with Kotlin + Jetpack Compose + ExoPlayer (Media3).
+A high-resolu tion audio player for Android built with Kotlin + Jetpack Compose + ExoPlayer (Media3).
 
 ---
 
